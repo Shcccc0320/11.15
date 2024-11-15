@@ -226,12 +226,12 @@ class V2XEnvironment(gym.Env):
                 if delay <= self.max_delay:
                     reward += 5
                 else:
-                    reward -= 0.1 * (delay - self.max_delay)
+                    reward -= 0.01 * (delay - self.max_delay)
 
                 if datarate >= self.min_rate:
                     reward += 3
                 else:
-                    reward -= 0.05 * (self.min_rate - datarate)
+                    reward -= 0.005 * (self.min_rate - datarate)
 
         return np.clip(reward, -10, 10)
 
